@@ -1,0 +1,54 @@
+﻿@model DummyCPLWeb.ViewModel.CoilScheduleViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css" rel="stylesheet">
+<link href="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/reorder-rows/bootstrap-table-reorder-rows.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/TableDnD/1.0.3/jquery.tablednd.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/reorder-rows/bootstrap-table-reorder-rows.min.js"></script>
+
+<h1>入料鋼捲排程資訊</h1>
+
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <a  type="button" class="btn btn-secondary" asp-controller="CoilSchedule" asp-action="Index">刷新</a>
+    @*<button type="button" class="btn btn-secondary">刷新</button>*@
+    <button type="button" class="btn btn-secondary">更動</button>
+</div>
+<table id="table"
+       data-pagination="true"       
+       data-use-row-attr-func="true"
+       data-reorderable-rows="true"
+       data-selector="true"
+       >
+    <thead>
+        <tr>
+            <th data-field="CoilScheduleID" data-sortable="true">鋼捲編號</th>
+            <th data-field="SeqNo" data-sortable="true">順序號</th>
+            <th data-field="CreateTime" data-sortable="true">更新時間</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var shcedule in Model.CoilSchedules)
+        {
+            <tr>
+                <td>@shcedule.CoilScheduleID</td>
+                <td>@shcedule.SeqNo</td>
+                <td>@shcedule.CreateTime</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<script>
+    $(function () {
+        $("#table").bootstrapTable();
+    })
+</script>

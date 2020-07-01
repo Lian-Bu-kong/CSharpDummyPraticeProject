@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyController", "DummyController\DummyController.csproj", "{2BD24216-9A91-4539-9502-EEB1F54784AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BD24216-9A91-4539-9502-EEB1F54784AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD24216-9A91-4539-9502-EEB1F54784AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD24216-9A91-4539-9502-EEB1F54784AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD24216-9A91-4539-9502-EEB1F54784AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7112EC87-61E1-4E92-B557-1DC57BDBE1EA}
+	EndGlobalSection
+EndGlobal

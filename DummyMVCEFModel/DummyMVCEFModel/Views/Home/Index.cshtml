@@ -1,0 +1,66 @@
+﻿@model DummyMVCEFModel.ViewModel.VMDeptEmp
+
+@{
+    ViewBag.Title = "員工資料管理";
+}
+
+@*將tilte改為中文,<h2>改為在HomeController所建立的ViewBag.DepName*@
+<h2>員工資料管理</h2>
+
+
+<div class="row">
+    <div class="col-xs-3">
+
+
+        <ul class="list-group">
+            @foreach (var item in Model.department)
+            {
+
+                <li class="list-group-item">@Html.ActionLink(item.FDepName, "Index", new { depId = item.FDepId })</li>
+            }
+        </ul>
+
+
+    </div>
+    <div class="col-xs-9">
+        <p class="text-right">
+            @Html.ActionLink("員工資料新增", "Create", new { depId = ViewBag.DepId }, new { @class = "btn btn-primary" })
+         
+        </p>
+        <h3 class="alert alert-warning">@ViewBag.DeptName</h3>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    員工編號
+                </th>
+                <th>
+                    姓名
+                </th>
+                <th>
+                    電話
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.employee)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FEmpId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FPhone)
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("刪除", "Delete", new { fEmpId = item.FEmpId }, new { @class = "btn btn-danger", onclick = "return confirm('確定刪除嗎？')" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

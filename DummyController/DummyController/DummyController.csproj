@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\1.JPG" />
+    <None Include="wwwroot\images\2.JPG" />
+    <None Include="wwwroot\images\3.JPG" />
+    <None Include="wwwroot\images\4.JPG" />
+    <None Include="wwwroot\images\5.JPG" />
+    <None Include="wwwroot\images\6.JPG" />
+    <None Include="wwwroot\images\7.JPG" />
+    <None Include="wwwroot\images\8.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

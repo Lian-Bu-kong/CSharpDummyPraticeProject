@@ -1,0 +1,65 @@
+﻿@*@model _06ViewModel.Models.tEmployee*@
+@*//06-3-9 加入給下拉選單用的資料*@
+@model IEnumerable<DummyMVCEFModel.Models.TDepartment>
+@*//06-3-10 將英文字改為中文字*@
+@{
+    ViewBag.Title = "新增員工資料";
+    //var depId = Request.Query["depId"];
+    var depID = ViewBag.DepId;
+    var selected = "";
+}
+
+<h2>新增員工資料</h2>
+
+<form method="post" action="@Url.Action("Create")">
+
+    <div class="form-horizontal">
+
+
+        <div class="form-group">
+            <label for="fEmpId" class="control-label col-md-2">編號</label>
+            <div class="col-md-10">
+                <input id="fEmpId" name="fEmpId" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fName" class="control-label col-md-2">姓名</label>
+            <div class="col-md-10">
+                <input id="fName" name="fName" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fPhone" class="control-label col-md-2">電話</label>
+            <div class="col-md-10">
+                <input id="fPhone" name="fPhone" type="text" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fDepId" class="control-label col-md-2">部門</label>
+            <div class="col-md-10">
+                @*//加入給下拉選單用的資料*@
+                <select id="fDepId" name="fDepId" class="form-control">
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.FDepId" selected>@item.FDepName</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    @* } *@
+</form>
+<div>
+    @Html.ActionLink("返回", "Index", new { depId = depID })
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
